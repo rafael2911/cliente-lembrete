@@ -1,4 +1,3 @@
-import { type } from 'os';
 
 type prioridade = 'BAIXA' | 'MEDIA' | 'ALTA';
 
@@ -7,5 +6,5 @@ export interface Lembrete {
     conteudo: string;
     arquivao: boolean;
     prioridade: prioridade;
-    modificado: number;
+    modificado: string;
 }
