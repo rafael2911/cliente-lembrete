@@ -1,3 +1,5 @@
+import { ErrorMsgComponent } from './compartilhado/error-msg/error-msg.component';
+
 import { Component } from '@angular/core';
 
 @Component({
