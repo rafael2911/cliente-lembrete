@@ -1,7 +1,7 @@
 import { Lembrete } from './../../interfaces/lembrete';
 import { ErrorMsgComponent } from './../../compartilhado/error-msg/error-msg.component';
 import { LembreteService } from './../../services/lembrete.service';
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({

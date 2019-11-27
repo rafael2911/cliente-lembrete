@@ -4,12 +4,13 @@ import { ListaLembreteComponent } from './paginas/lista-lembrete/lista-lembrete.
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './paginas/login/login.component';
+import { AuthGuardService } from './seguranca/auth-guard.service';
 
 
 const routes: Routes = [
-  { path: '', component: ListaLembreteComponent },
-  { path: 'lembrete/criar', component: CriarLembreteComponent },
-  { path: 'lembrete/editar/:id', component: EditarLembreteComponent },
+  { path: '', component: ListaLembreteComponent, canActivate: [AuthGuardService] },
+  { path: 'lembrete/criar', component: CriarLembreteComponent, canActivate: [AuthGuardService] },
+  { path: 'lembrete/editar/:id', component: EditarLembreteComponent, canActivate: [AuthGuardService] },
   { path: 'login', component: LoginComponent },
   { path: '**', redirectTo: ''}
 ];

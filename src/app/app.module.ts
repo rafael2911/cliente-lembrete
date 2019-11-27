@@ -14,6 +14,7 @@ import { CriarLembreteComponent } from './paginas/criar-lembrete/criar-lembrete.
 import { EditarLembreteComponent } from './paginas/editar-lembrete/editar-lembrete.component';
 import { LoginComponent } from './paginas/login/login.component';
 import { AuthService } from './seguranca/auth.service';
+import { AuthGuardService } from './seguranca/auth-guard.service';
 
 export function tokenGetter() {
   return localStorage.getItem('access_token');
@@ -39,12 +40,13 @@ export function tokenGetter() {
         tokenGetter: () => tokenGetter(),
         headerName: 'Authorization',
         whitelistedDomains: ['localhost:8080'],
-        blacklistedRoutes: ['example.com/examplebadroute/']
+        blacklistedRoutes: ['http://localhost:8080/oauth/token']
       }
     })
   ],
   providers: [
-    AuthService
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })
